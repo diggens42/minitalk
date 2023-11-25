@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 00:16:30 by fwahl             #+#    #+#             */
-/*   Updated: 2023/11/25 17:47:39 by fwahl            ###   ########.fr       */
+/*   Created: 2023/11/23 13:35:57 by fwahl             #+#    #+#             */
+/*   Updated: 2023/11/25 17:51:38 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
-void	ft_putstr(char *str)
-{
-	int	i;
+# include <signal.h>
+# include "libft/libft.h"
 
-	if (!str)
-		ft_putstr("(null)");
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(STDOUT_FILENO, &str[i], 1);
-		i++;
-	}
-}
+#endif

@@ -6,14 +6,14 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:35:57 by fwahl             #+#    #+#             */
-/*   Updated: 2023/11/24 18:46:36 by fwahl            ###   ########.fr       */
+/*   Updated: 2023/11/25 17:50:55 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-#include <signal.h>
-#include "libft/libft.h"
+# include <signal.h>
+# include "libft/libft.h"
 
 #endif

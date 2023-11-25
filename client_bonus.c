@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:12:50 by fwahl             #+#    #+#             */
-/*   Updated: 2023/11/25 17:54:57 by fwahl            ###   ########.fr       */
+/*   Updated: 2023/11/25 17:56:48 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 static volatile sig_atomic_t	g_receiving = 0;
 
@@ -66,14 +66,10 @@ void	error_handler(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	i = 0;
-	while (argv[1][i] != '\0')
+	while (argv[1][i] != ft_isalnum)
 	{
-		if (!ft_isdigit(argv[1][i]))
-		{
-			ft_printf("Invalid PID");
-			exit (EXIT_FAILURE);
-		}
-		i++;
+		ft_printf("Invalid PID");
+		exit (EXIT_FAILURE);
 	}
 }
 
