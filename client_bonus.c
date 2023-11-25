@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:12:50 by fwahl             #+#    #+#             */
-/*   Updated: 2023/11/25 17:56:48 by fwahl            ###   ########.fr       */
+/*   Updated: 2023/11/25 23:12:22 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	signal_handler(int signum, siginfo_t *info, void *context)
 	(void)context;
 	g_receiving = 1;
 	if (signum == SIGUSR2)
+	{
 		i++;
+		usleep(10);
+	}
 	else if (signum == SIGUSR1)
 		ft_printf("Bytes received: %d\n", i / 8);
 }
@@ -48,7 +51,7 @@ int	char_to_binary(char c, int pid)
 				exit(EXIT_FAILURE);
 			}
 			i++;
-			usleep(1000);
+			usleep(100);
 		}
 		g_receiving = 0;
 		bit_idx--;
@@ -66,10 +69,14 @@ void	error_handler(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	i = 0;
-	while (argv[1][i] != ft_isalnum)
+	while (argv[1][i] != '\0')
 	{
-		ft_printf("Invalid PID");
-		exit (EXIT_FAILURE);
+		if (!ft_isdigit(argv[1][i]))
+		{
+			ft_printf("Invalid PID");
+			exit (EXIT_FAILURE);
+		}
+		i++;
 	}
 }
 

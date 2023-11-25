@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:12:50 by fwahl             #+#    #+#             */
-/*   Updated: 2023/11/25 17:54:57 by fwahl            ###   ########.fr       */
+/*   Updated: 2023/11/25 23:09:03 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	signal_handler(int signum, siginfo_t *info, void *context)
 	(void)context;
 	g_receiving = 1;
 	if (signum == SIGUSR2)
+	{
 		i++;
+		usleep(10);
+	}
 	else if (signum == SIGUSR1)
 		ft_printf("Bytes received: %d\n", i / 8);
 }
@@ -48,7 +51,7 @@ int	char_to_binary(char c, int pid)
 				exit(EXIT_FAILURE);
 			}
 			i++;
-			usleep(1000);
+			usleep(10000);
 		}
 		g_receiving = 0;
 		bit_idx--;

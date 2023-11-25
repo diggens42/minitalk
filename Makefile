@@ -4,6 +4,8 @@ LIBFT = ./libft/libft.a
 
 SERVER = server
 CLIENT = client
+SERVER_BONUS = server_bonus
+CLIENT_BONUS = client_bonus
 
 SERVER_SRCS = server.c
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
@@ -37,5 +39,5 @@ clean:
 fclean: clean
 		$(MAKE) fclean -C ./libft
 		rm -f $(SERVER) $(CLIENT)
-		rm -f $(SERVER_BONUS_OBJS) $(CLIENT_BONUS_OBJS)
+		rm -f $(SERVER_BONUS) $(CLIENT_BONUS)
 re: fclean all
